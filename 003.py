@@ -20,7 +20,7 @@ def isPrime(number):
 start = time.time()
 
 # Loop through all odd numbers below the square root
-for j in range(3, int(num ** 0.5), 2):
+for j in range(3, int(num ** 0.5) + 1, 2):
     # Check if j is a factor
     if num % j == 0:
         last_num = num / j
@@ -28,13 +28,11 @@ for j in range(3, int(num ** 0.5), 2):
         # Therefore, check the highest factor
         if isPrime(int(last_num)) and last_num > highest_prime:
             highest_prime = last_num
-            last_prime_factor = last_num
         elif isPrime(int(j)) and j > highest_prime:
             # Traverse through factors lower than the square root if prime factors 
             # greater than sqrt don't exist
             highest_prime = j
-            last_prime_factor = j
 
-print(last_prime_factor)
+print(highest_prime)
 print((time.time() - start) * 1000)
 
