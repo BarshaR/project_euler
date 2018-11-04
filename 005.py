@@ -4,7 +4,7 @@
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 '''
 
-number = 0
+number_found = 0
 
 def dividesIntoRange(max_num, num):
     for i in range(1, max_num + 1):
@@ -13,10 +13,10 @@ def dividesIntoRange(max_num, num):
     return True
 
 counter = 2520
-while (number == 0):
+while (number_found == 0):
     if (not dividesIntoRange(20, counter)):
         counter += 2520
     else:
-        number = counter
+        number_found = counter
 
-print(number)
+print(number_found)
